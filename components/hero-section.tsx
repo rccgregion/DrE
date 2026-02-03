@@ -13,24 +13,24 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section id="main" className="relative overflow-hidden min-h-[80vh] flex items-center">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/6 to-transparent" />
+    <section id="main" className="relative overflow-hidden min-h-[90vh] flex items-center bg-gradient-to-br from-background via-background to-muted/50">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/3 to-accent/5" />
 
-      <div className="absolute top-0 -left-8 w-56 h-56 bg-accent/12 rounded-full mix-blend-multiply filter blur-2xl animate-blob" />
-      <div className="absolute top-0 -right-8 w-56 h-56 bg-primary/12 rounded-full mix-blend-multiply filter blur-2xl animate-blob animation-delay-2000" />
-      <div className="absolute -bottom-8 left-12 w-56 h-56 bg-secondary/12 rounded-full mix-blend-multiply filter blur-2xl animate-blob animation-delay-4000" />
+      <div className="absolute top-0 -left-12 w-72 h-72 bg-primary/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob opacity-50" />
+      <div className="absolute top-0 -right-12 w-72 h-72 bg-accent/8 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000 opacity-50" />
+      <div className="absolute -bottom-16 left-20 w-80 h-80 bg-secondary/8 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000 opacity-50" />
 
       {/* Particle effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(8)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1.5 h-1.5 bg-white/12 rounded-full animate-float"
+            className="absolute w-1.5 h-1.5 bg-white/10 rounded-full animate-float"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 4}s`,
-              animationDuration: `${4 + Math.random() * 5}s`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${5 + Math.random() * 6}s`,
             }}
           />
         ))}

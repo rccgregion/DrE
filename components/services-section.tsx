@@ -51,10 +51,10 @@ export function ServicesSection() {
           {services.map((service, index) => (
             <Card
               key={index}
-              className="h-full border-none shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden group bg-background/50 backdrop-blur-sm"
+              className="h-full border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 overflow-hidden group bg-background/60 backdrop-blur-sm hover-lift"
             >
               <div
-                className={`absolute top-0 left-0 w-full h-2 bg-gradient-to-r ${index === 0 ? "from-primary to-primary/50" : "from-accent to-accent/50"}`}
+                className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${index === 0 ? "from-primary to-primary/50" : "from-accent to-accent/50"}`}
               />
 
               <CardHeader className="relative pb-8">

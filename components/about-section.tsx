@@ -6,24 +6,24 @@ import Link from "next/link"
 export function AboutSection() {
   return (
     <section className="py-20 lg:py-32 bg-background relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-muted/50 to-transparent -z-10" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10 animate-blob" />
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-muted/30 to-transparent -z-10" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/8 rounded-full blur-3xl -z-10 animate-blob" />
+      <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl -z-10 animate-blob animation-delay-3000 opacity-50" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative group animate-fade-in-up">
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary to-accent rounded-2xl opacity-20 blur-lg group-hover:opacity-30 transition duration-500" />
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/20">
-              <Image
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl opacity-0 group-hover:opacity-40 transition duration-500 blur-xl" />
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/20 group-hover:ring-primary/30 transition-all duration-500 hover-lift">\n              <Image
                 src="/images/whatsapp-20image-202025-12-05-20at-2012-imgupscaler.jpg"
                 alt="Dr. Ekaette Joseph-Isang in her office"
                 fill
                 className="object-cover transition duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <div className="absolute bottom-6 left-6 right-6 glass p-4 rounded-xl backdrop-blur-md border border-white/20 shadow-lg animate-fade-in-up animate-delay-300">
+              <div className="absolute bottom-6 left-6 right-6 glass-effect rounded-xl backdrop-blur-md border border-white/20 shadow-lg animate-fade-in-up animate-delay-300">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-accent/10 rounded-full">
+                  <div className="p-2 bg-accent/20 rounded-full">
                     <Sparkles className="h-5 w-5 text-accent" />
                   </div>
                   <div>
