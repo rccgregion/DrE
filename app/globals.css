@@ -1,0 +1,320 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color scheme: off-white base, teal primary, charcoal secondary, soft gold highlights */
+  --background: oklch(0.97 0.01 85); /* Off-white / light ivory */
+  --foreground: oklch(0.25 0.01 258); /* Charcoal gray */
+  --card: oklch(0.98 0.01 85);
+  --card-foreground: oklch(0.25 0.01 258);
+  --popover: oklch(0.98 0.01 85);
+  --popover-foreground: oklch(0.25 0.01 258);
+  --primary: oklch(0.5 0.12 195); /* Teal accent */
+  --primary-foreground: oklch(0.99 0.005 85);
+  --secondary: oklch(0.3 0.02 258); /* Charcoal gray for secondary */
+  --secondary-foreground: oklch(0.99 0.005 85);
+  --muted: oklch(0.93 0.01 85);
+  --muted-foreground: oklch(0.45 0.02 258);
+  --accent: oklch(0.65 0.15 65); /* Soft gold / muted orange for CTAs */
+  --accent-foreground: oklch(0.99 0.005 85);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0.005 85);
+  --border: oklch(0.88 0.01 85);
+  --input: oklch(0.88 0.01 85);
+  --ring: oklch(0.5 0.12 195);
+  --chart-1: oklch(0.5 0.12 195); /* Teal */
+  --chart-2: oklch(0.65 0.15 65); /* Gold */
+  --chart-3: oklch(0.3 0.02 258); /* Charcoal */
+  --chart-4: oklch(0.6 0.1 195); /* Light teal */
+  --chart-5: oklch(0.7 0.12 65); /* Light gold */
+  --radius: 0.5rem;
+  --sidebar: oklch(0.97 0.01 85);
+  --sidebar-foreground: oklch(0.25 0.01 258);
+  --sidebar-primary: oklch(0.5 0.12 195);
+  --sidebar-primary-foreground: oklch(0.99 0.005 85);
+  --sidebar-accent: oklch(0.93 0.01 85);
+  --sidebar-accent-foreground: oklch(0.25 0.01 258);
+  --sidebar-border: oklch(0.88 0.01 85);
+  --sidebar-ring: oklch(0.5 0.12 195);
+}
+
+.dark {
+  --background: oklch(0.2 0.01 258);
+  --foreground: oklch(0.97 0.01 85);
+  --card: oklch(0.22 0.01 258);
+  --card-foreground: oklch(0.97 0.01 85);
+  --popover: oklch(0.2 0.01 258);
+  --popover-foreground: oklch(0.97 0.01 85);
+  --primary: oklch(0.6 0.14 195);
+  --primary-foreground: oklch(0.2 0.01 258);
+  --secondary: oklch(0.35 0.02 258);
+  --secondary-foreground: oklch(0.97 0.01 85);
+  --muted: oklch(0.28 0.01 258);
+  --muted-foreground: oklch(0.75 0.01 85);
+  --accent: oklch(0.7 0.15 65);
+  --accent-foreground: oklch(0.2 0.01 258);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.97 0.01 85);
+  --border: oklch(0.3 0.01 258);
+  --input: oklch(0.3 0.01 258);
+  --ring: oklch(0.6 0.14 195);
+  --chart-1: oklch(0.6 0.14 195);
+  --chart-2: oklch(0.7 0.15 65);
+  --chart-3: oklch(0.35 0.02 258);
+  --chart-4: oklch(0.65 0.12 195);
+  --chart-5: oklch(0.75 0.12 65);
+  --sidebar: oklch(0.22 0.01 258);
+  --sidebar-foreground: oklch(0.97 0.01 85);
+  --sidebar-primary: oklch(0.6 0.14 195);
+  --sidebar-primary-foreground: oklch(0.2 0.01 258);
+  --sidebar-accent: oklch(0.28 0.01 258);
+  --sidebar-accent-foreground: oklch(0.97 0.01 85);
+  --sidebar-border: oklch(0.3 0.01 258);
+  --sidebar-ring: oklch(0.6 0.14 195);
+}
+
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* Adding custom animations and keyframes for elegant motion design */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes blob {
+  0%,
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Added new keyframes for slow animations */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Custom utility classes for animations */
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-blob {
+    animation: blob 7s ease-in-out infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.5s ease-out forwards;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  /* Added slow animation utilities */
+  .animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 2s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+  }
+
+  /* Staggered animation delays */
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2000ms;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4000ms;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, oklch(0.5 0.12 195) 0%, oklch(0.65 0.15 65) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Elevated card with subtle shadow */
+  .elevated-card {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .elevated-card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 20px 60px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
