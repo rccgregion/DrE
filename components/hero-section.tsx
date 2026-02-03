@@ -13,25 +13,24 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section className="relative overflow-hidden min-h-[90vh] flex items-center">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-primary animate-gradient" />
+    <section id="main" className="relative overflow-hidden min-h-[80vh] flex items-center">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/6 to-transparent" />
 
-      <div className="absolute top-0 -left-4 w-72 h-72 bg-accent/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob" />
-      <div className="absolute top-0 -right-4 w-72 h-72 bg-primary/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
-      <div className="absolute -bottom-8 left-20 w-72 h-72 bg-secondary/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000" />
-      <div className="absolute top-1/2 right-1/4 w-48 h-48 bg-accent/10 rounded-full mix-blend-multiply filter blur-2xl animate-float" />
+      <div className="absolute top-0 -left-8 w-56 h-56 bg-accent/12 rounded-full mix-blend-multiply filter blur-2xl animate-blob" />
+      <div className="absolute top-0 -right-8 w-56 h-56 bg-primary/12 rounded-full mix-blend-multiply filter blur-2xl animate-blob animation-delay-2000" />
+      <div className="absolute -bottom-8 left-12 w-56 h-56 bg-secondary/12 rounded-full mix-blend-multiply filter blur-2xl animate-blob animation-delay-4000" />
 
       {/* Particle effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-white/20 rounded-full animate-float"
+            className="absolute w-1.5 h-1.5 bg-white/12 rounded-full animate-float"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${3 + Math.random() * 4}s`,
+              animationDelay: `${Math.random() * 4}s`,
+              animationDuration: `${4 + Math.random() * 5}s`,
             }}
           />
         ))}
@@ -49,20 +48,20 @@ export function HeroSection() {
             </div>
 
             <div className="space-y-4">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight text-balance animate-fade-in-up">
+              <h1 className="font-bold leading-tight text-balance animate-fade-in-up text-[var(--fs-4xl)] sm:text-[var(--fs-3xl)] lg:text-[var(--fs-4xl)]">
                 Dr. Ekaette Joseph-Isang
               </h1>
               <div className="space-y-2">
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold leading-tight text-accent animate-fade-in-up animate-delay-100">
+                <h2 className="font-semibold leading-tight text-accent animate-fade-in-up animate-delay-100 text-[var(--fs-2xl)] sm:text-[var(--fs-xl)] lg:text-[var(--fs-2xl)]">
                   MD, MBA, MPH, CPHQ, CDIP, CCS, CRC, PAHM
                 </h2>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-medium leading-tight text-white/90 animate-fade-in-up animate-delay-200">
+                <h3 className="font-medium leading-tight text-white/90 animate-fade-in-up animate-delay-200 text-[var(--fs-xl)] sm:text-[var(--fs-lg)] lg:text-[var(--fs-2xl)]">
                   Healthcare Executive
                 </h3>
               </div>
             </div>
 
-            <p className="text-lg lg:text-xl leading-relaxed text-white/90 max-w-2xl animate-fade-in-up animate-delay-300">
+            <p className="leading-relaxed text-white/90 max-w-2xl animate-fade-in-up animate-delay-300 text-[var(--fs-lg)] lg:text-[var(--fs-xl)]">
               Healthcare strategy and transformation executive with{" "}
               <span className="font-semibold text-accent">20+ years</span> in operations and project management. Expert
               in value-based care, clinical documentation integrity (CDI), risk adjustment, and physician engagement.
@@ -71,8 +70,8 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-in-up animate-delay-400">
               <a href="https://calendar.app.google/VWSK6szrzCfvSMn1A" target="_blank" rel="noopener noreferrer">
                 <Button
-                  size="lg"
-                  className="bg-accent text-white hover:bg-accent/90 font-semibold px-8 py-6 text-lg rounded-full shadow-2xl hover:shadow-accent/50 transition-all duration-300 hover:scale-105 group"
+                  size="pill"
+                  className="bg-accent text-white hover:bg-accent/90 font-semibold text-lg shadow-2xl hover:shadow-accent/50 transition-all duration-300 hover:scale-105 group"
                 >
                   Schedule a Consultation
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -80,9 +79,9 @@ export function HeroSection() {
               </a>
               <a href="/services">
                 <Button
-                  size="lg"
+                  size="pill"
                   variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-secondary font-semibold px-8 py-6 text-lg rounded-full bg-transparent backdrop-blur-sm transition-all duration-300 hover:scale-105"
+                  className="border-2 border-white text-white hover:bg-white hover:text-secondary font-semibold text-lg bg-transparent backdrop-blur-sm transition-all duration-300 hover:scale-105"
                 >
                   Explore Services
                 </Button>

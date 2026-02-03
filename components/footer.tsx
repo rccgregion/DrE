@@ -50,10 +50,10 @@ export function Footer() {
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6">
           {/* Company Info */}
           <div className="space-y-3">
-            <div className="text-2xl font-semibold">
+            <div className="font-semibold text-[var(--fs-2xl)]">
               Dr.<span className="font-medium text-background"> Ekaette Joseph-Isang</span>
             </div>
-            <div className="space-y-2 text-sm">
+            <div className="space-y-2 text-[var(--fs-sm)]">
               <a
                 href="tel:770-572-1066"
                 className="flex items-center gap-2 text-secondary-foreground/80 hover:text-accent transition-colors"
@@ -111,8 +111,8 @@ export function Footer() {
 
           {/* Services */}
           <div className="space-y-3">
-            <h3 className="text-lg font-semibold">Services</h3>
-            <ul className="space-y-1.5 text-sm">
+            <h3 className="font-semibold text-[var(--fs-xl)]">Services</h3>
+            <ul className="space-y-1.5 text-[var(--fs-sm)]">
               <li>
                 <Link href="/services" className="text-secondary-foreground/80 hover:text-accent transition-colors">
                   All Services
@@ -141,8 +141,8 @@ export function Footer() {
 
           {/* Resources */}
           <div className="space-y-3">
-            <h3 className="text-lg font-semibold">Resources</h3>
-            <ul className="space-y-1.5 text-sm">
+            <h3 className="font-semibold text-[var(--fs-xl)]">Resources</h3>
+            <ul className="space-y-1.5 text-[var(--fs-sm)]">
               <li>
                 <Link href="/blog" className="text-secondary-foreground/80 hover:text-accent transition-colors">
                   Blog
@@ -163,8 +163,8 @@ export function Footer() {
 
           {/* Newsletter */}
           <div className="space-y-3">
-            <h3 className="text-lg font-semibold">Stay Connected</h3>
-            <p className="text-secondary-foreground/80 text-sm">Subscribe to receive healthcare strategy insights.</p>
+            <h3 className="font-semibold text-[var(--fs-xl)]">Stay Connected</h3>
+            <p className="text-secondary-foreground/80 text-[var(--fs-sm)]">Subscribe to receive healthcare strategy insights.</p>
             {subscribed ? (
               <div className="flex items-center gap-2 text-accent animate-fade-in">
                 <CheckCircle className="h-5 w-5" />

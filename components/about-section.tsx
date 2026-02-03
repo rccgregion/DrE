@@ -38,20 +38,20 @@ export function AboutSection() {
           {/* Right content */}
           <div className="space-y-8 animate-fade-in-up animate-delay-200">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[var(--fs-sm)] font-medium">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                 </span>
                 About Me
               </div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-foreground tracking-tight">
+              <h2 className="font-bold text-foreground tracking-tight text-[var(--fs-3xl)] lg:text-[var(--fs-4xl)]">
                 Dr. Ekaette <span className="gradient-text text-chart-3">Joseph-Isang</span>
               </h2>
-              <p className="text-xl font-medium text-primary/90">
+              <p className="font-medium text-primary/90 text-[var(--fs-xl)]">
                 Healthcare Executive
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed text-justify">
+              <p className="text-muted-foreground leading-relaxed text-justify text-[var(--fs-lg)]">
                 Healthcare strategy and transformation executive with{" "}
                 <span className="font-semibold text-foreground">20+ years</span> of experience in healthcare operations,
                 project management, and value-based care initiatives. Proven track record of leading transformation
@@ -88,8 +88,8 @@ export function AboutSection() {
             <div className="pt-6">
               <Link href="/experience">
                 <Button
-                  size="lg"
-                  className="bg-primary text-white hover:bg-primary/90 font-semibold px-8 py-6 rounded-full shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:-translate-y-1"
+                  size="pill"
+                  className="bg-primary text-white hover:bg-primary/90 font-semibold text-lg shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:-translate-y-1"
                 >
                   Learn More About My Experience
                   <ArrowRight className="ml-2 h-5 w-5" />

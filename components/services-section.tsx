@@ -40,8 +40,8 @@ export function ServicesSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center space-y-4 mb-16 animate-fade-in-up">
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground tracking-tight">What I Do</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <h2 className="font-bold text-foreground tracking-tight text-[var(--fs-3xl)] lg:text-[var(--fs-4xl)]">What I Do</h2>
+          <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed text-[var(--fs-lg)]">
             Specialized healthcare strategy and transformation services designed to improve clinical outcomes, reduce
             costs, and enhance operational efficiency.
           </p>
@@ -64,9 +64,9 @@ export function ServicesSection() {
                   >
                     <service.icon className={`h-8 w-8 ${service.iconColor}`} />
                   </div>
-                  <CardTitle className="text-2xl font-bold">{service.title}</CardTitle>
+                  <CardTitle className="font-bold text-[var(--fs-2xl)]">{service.title}</CardTitle>
                 </div>
-                <CardDescription className="text-lg leading-relaxed">{service.description}</CardDescription>
+                <CardDescription className="leading-relaxed text-[var(--fs-lg)]">{service.description}</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-4">
@@ -91,8 +91,8 @@ export function ServicesSection() {
         <div className="text-center animate-fade-in-up animate-delay-300">
           <Link href="https://calendar.app.google/VWSK6szrzCfvSMn1A" target="_blank" rel="noopener noreferrer">
             <Button
-              size="lg"
-              className="bg-secondary text-white hover:bg-secondary/90 font-semibold px-10 py-7 rounded-full text-lg shadow-xl hover:shadow-secondary/25 transition-all duration-300 hover:scale-105"
+              size="pill"
+              className="bg-secondary text-white hover:bg-secondary/90 font-semibold text-lg shadow-xl hover:shadow-secondary/25 transition-all duration-300 hover:scale-105"
             >
               Discuss Your Healthcare Transformation Needs
               <ArrowRight className="ml-2 h-5 w-5" />
