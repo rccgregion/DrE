@@ -45,8 +45,8 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-secondary text-secondary-foreground">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <footer className="bg-secondary text-secondary-foreground border-t border-border/20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6">
           {/* Company Info */}
           <div className="space-y-3">
@@ -201,16 +201,16 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-secondary-foreground/20 mt-4 pt-3">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-2">
-            <div className="text-sm text-secondary-foreground/60">
+        <div className="border-t border-secondary-foreground/10 mt-8 lg:mt-12 pt-6 lg:pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-sm text-secondary-foreground/70 hover:text-secondary-foreground transition-smooth">
               © 2026 Dr. Ekaette Joseph-Isang. All rights reserved.
             </div>
-            <div className="flex items-center gap-6 text-sm">
-              <Link href="/terms" className="text-secondary-foreground/60 hover:text-accent transition-colors">
+            <div className="flex items-center gap-8 text-sm">
+              <Link href="/terms" className="text-secondary-foreground/70 hover:text-accent transition-smooth">
                 Terms of Service
               </Link>
-              <Link href="/cookies" className="text-secondary-foreground/60 hover:text-accent transition-colors">
+              <Link href="/cookies" className="text-secondary-foreground/70 hover:text-accent transition-smooth">
                 Cookie Policy
               </Link>
             </div>

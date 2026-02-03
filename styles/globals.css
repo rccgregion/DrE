@@ -318,3 +318,61 @@ select:focus-visible {
 .btn-smooth:active:not(:disabled) {
   transform: translateY(0);
 }
+/* Responsive typography scaling */
+@media (max-width: 640px) {
+  :root {
+    --fs-4xl: 1.875rem; /* scale down from 2.5rem */
+    --fs-3xl: 1.5rem; /* scale down from 2rem */
+    --fs-2xl: 1.25rem; /* scale down from 1.5rem */
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Loading skeleton */
+@keyframes skeleton-loading {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--muted) 25%,
+    rgba(107, 114, 128, 0.1) 50%,
+    var(--muted) 75%
+  );
+  background-size: 1000px 100%;
+  animation: skeleton-loading 2s infinite;
+  border-radius: var(--radius);
+}
+
+.dark .skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--muted) 25%,
+    rgba(107, 114, 128, 0.2) 50%,
+    var(--muted) 75%
+  );
+  background-size: 1000px 100%;
+  animation: skeleton-loading 2s infinite;
+}
