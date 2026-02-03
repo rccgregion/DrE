@@ -58,18 +58,18 @@ export function Footer() {
                 href="tel:770-572-1066"
                 className="flex items-center gap-2 text-secondary-foreground/80 hover:text-accent transition-colors"
               >
-                <Phone className="h-4 w-4 flex-shrink-0" />
+                <Phone className="h-4 w-4 shrink-0" />
                 <span>770-572-1066</span>
               </a>
               <a
                 href="mailto:ejosephisang@ritebridge.com"
                 className="flex items-center gap-2 text-secondary-foreground/80 hover:text-accent transition-colors"
               >
-                <Mail className="h-4 w-4 flex-shrink-0" />
+                <Mail className="h-4 w-4 shrink-0" />
                 <span>ejosephisang@ritebridge.com</span>
               </a>
               <div className="flex items-start gap-2 text-secondary-foreground/80">
-                <MapPin className="h-4 w-4 flex-shrink-0 mt-0.5" />
+                <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
                 <span>996 E New Circle Rd, Lexington KY 40505</span>
               </div>
             </div>

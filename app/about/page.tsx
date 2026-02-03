@@ -45,6 +45,7 @@ export default function AboutPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [error, setError] = useState("")
+  const [messageError, setMessageError] = useState("")
 
   useEffect(() => {
     setIsVisible(true)
@@ -52,18 +53,20 @@ export default function AboutPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
     setError("")
-
+    setMessageError("")
+    if (formData.message.trim().length < 10) {
+      setMessageError("Message must be at least 10 characters")
+      return
+    }
+    setIsSubmitting(true)
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       })
-
       const data = await response.json()
-
       if (response.ok) {
         setIsSubmitted(true)
         setFormData({
@@ -127,7 +130,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary via-secondary to-primary text-white py-24 overflow-hidden min-h-[60vh] flex items-center">
+      <section className="relative bg-linear-to-br from-primary via-secondary to-primary text-white py-24 overflow-hidden min-h-60 flex items-center">
         {/* Animated background elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-blob" />
@@ -176,8 +179,8 @@ export default function AboutPage() {
               <div
                 className={`relative transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}
               >
-                <div className="relative aspect-[4/5] max-w-md mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent via-primary to-accent rounded-3xl blur-2xl opacity-40 animate-float" />
+                <div className="relative aspect-4/5 max-w-md mx-auto">
+                  <div className="absolute inset-0 bg-linear-to-br from-accent via-primary to-accent rounded-3xl blur-2xl opacity-40 animate-float" />
                   <div className="relative rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20">
                     <Image
                       src="/images/whatsapp-20image-202025-12-05-20at-2012-imgupscaler.jpg"
@@ -468,10 +471,13 @@ export default function AboutPage() {
                           id="message"
                           value={formData.message}
                           onChange={(e) => handleInputChange("message", e.target.value)}
-                          className="mt-2 min-h-[120px] rounded-lg"
+                          className="mt-2 min-h-30 rounded-lg"
                           placeholder="Tell us about your needs..."
                           required
                         />
+                        {messageError && (
+                          <p className="text-red-500 text-sm mt-1">{messageError}</p>
+                        )}
                       </div>
 
                       {error && <p className="text-red-500 text-sm">{error}</p>}
@@ -501,7 +507,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary to-secondary text-white">
+      <section className="py-20 bg-linear-to-r from-primary to-secondary text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Healthcare Organization?</h2>
           <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
