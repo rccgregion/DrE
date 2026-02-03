@@ -40,8 +40,10 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
           <div
-            className={`space-y-8 text-white transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+            className={`space-y-8 text-white transition-all duration-1000 relative z-10 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
+            {/* Dark overlay scrim for text readability */}
+            <div className="absolute -inset-8 bg-gradient-to-r from-black/40 via-black/30 to-transparent rounded-2xl -z-10 pointer-events-none" />
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass animate-pulse-slow">
               <Sparkles className="h-4 w-4 text-accent animate-spin-slow" />
               <span className="text-sm font-medium">Healthcare Innovation Leader</span>
