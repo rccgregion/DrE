@@ -88,14 +88,14 @@ export function ServicesSection() {
           ))}
         </div>
 
-        <div className="text-center animate-fade-in-up animate-delay-300">
-          <Link href="https://calendar.app.google/VWSK6szrzCfvSMn1A" target="_blank" rel="noopener noreferrer">
+        <div className="text-center animate-fade-in-up animate-delay-300 max-w-md sm:max-w-none mx-auto">
+          <Link href="https://calendar.app.google/VWSK6szrzCfvSMn1A" target="_blank" rel="noopener noreferrer" className="block">
             <Button
               size="lg"
-              className="bg-secondary text-white hover:bg-secondary/90 font-semibold px-10 py-7 rounded-full text-lg shadow-xl hover:shadow-secondary/25 transition-all duration-300 hover:scale-105"
+              className="w-full sm:w-auto bg-secondary text-white hover:bg-secondary/90 font-semibold px-4 sm:px-10 py-3 sm:py-7 rounded-full text-xs sm:text-lg shadow-xl hover:shadow-secondary/25 transition-all duration-300 hover:scale-105 whitespace-normal h-auto"
             >
               Discuss Your Healthcare Transformation Needs
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-3 sm:h-5 w-3 sm:w-5 flex-shrink-0" />
             </Button>
           </Link>
         </div>

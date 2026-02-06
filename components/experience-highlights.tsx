@@ -100,12 +100,12 @@ export function ExperienceHighlights() {
                       <Trophy className="h-4 w-4 text-accent" />
                       Key Achievements
                     </h4>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-wrap gap-2">
                       {exp.achievements.map((achievement, achievementIndex) => (
                         <Badge
                           key={achievementIndex}
                           variant="secondary"
-                          className="text-sm py-1.5 px-3 bg-primary/5 text-primary hover:bg-primary/10 transition-colors border-primary/10"
+                          className="text-xs sm:text-sm py-2 px-2 sm:px-3 bg-primary/5 text-primary hover:bg-primary/10 transition-colors border-primary/10 whitespace-normal"
                         >
                           {achievement}
                         </Badge>

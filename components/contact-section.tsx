@@ -165,15 +165,10 @@ export function ContactSection() {
                 className="object-cover hover:scale-105 transition-transform duration-700"
               />
 
-              <div className="absolute bottom-8 left-8 right-8 glass p-6 rounded-2xl backdrop-blur-xl border border-white/30 shadow-2xl animate-fade-in-up animate-delay-500">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-white/80 text-sm font-medium mb-1">Ready to start?</p>
-                    <p className="text-white font-bold text-xl">Let's transform healthcare together</p>
-                  </div>
-                  <div className="h-10 w-10 bg-white rounded-full flex items-center justify-center shadow-lg">
-                    <ArrowRight className="h-5 w-5 text-primary" />
-                  </div>
+              <div className="absolute bottom-8 left-8 right-8 p-6 rounded-2xl backdrop-blur-xl bg-black/70 border border-white/50 shadow-2xl animate-fade-in-up animate-delay-500">
+                <div>
+                  <p className="text-white text-sm font-medium mb-2">Ready to start?</p>
+                  <p className="text-white font-bold text-2xl leading-tight">Let's transform healthcare together</p>
                 </div>
               </div>
             </div>

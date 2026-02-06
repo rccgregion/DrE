@@ -21,14 +21,14 @@ export function AboutSection() {
                 className="object-cover transition duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <div className="absolute bottom-6 left-6 right-6 glass p-4 rounded-xl backdrop-blur-md border border-white/20 shadow-lg animate-fade-in-up animate-delay-300">
+              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl backdrop-blur-md bg-black/70 border border-white/50 shadow-lg animate-fade-in-up animate-delay-300">
                 <div className="flex items-center gap-3">
                   <div className="p-2 bg-accent/10 rounded-full">
                     <Sparkles className="h-5 w-5 text-accent" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-white/90">Transforming Healthcare</p>
-                    <p className="text-xs text-white/70">One Organization at a Time</p>
+                    <p className="text-base font-bold text-white">Transforming Healthcare</p>
+                    <p className="text-sm text-white/90">One Organization at a Time</p>
                   </div>
                 </div>
               </div>
