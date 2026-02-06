@@ -1,6 +1,4 @@
-"use client"
-
-import { useParams } from "next/navigation"
+import { notFound } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -17,7 +15,6 @@ import {
   CheckCircle,
   AlertTriangle,
 } from "lucide-react"
-import { useState, useEffect } from "react"
 
 const blogPosts: Record<
   string,
@@ -412,44 +409,21 @@ const blogPosts: Record<
   },
 }
 
-export default function BlogPostPage() {
-  const params = useParams()
-  const [isVisible, setIsVisible] = useState(false)
-  const [mounted, setMounted] = useState(false)
+export async function generateStaticParams() {
+  return Object.keys(blogPosts).map((id) => ({
+    id,
+  }))
+}
 
-  useEffect(() => {
-    setMounted(true)
-    setIsVisible(true)
-  }, [])
-
-  const id = mounted && params?.id ? String(params.id) : null
+export default async function BlogPostPage(props: {
+  params: Promise<{ id: string }>
+}) {
+  const params = await props.params
+  const id = params?.id ? String(params.id) : null
   const post = id ? blogPosts[id] : null
 
-  if (!mounted) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="animate-pulse text-muted-foreground">Loading...</div>
-      </div>
-    )
-  }
-
   if (!post) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Article Not Found</h1>
-          <p className="text-muted-foreground mb-8">
-            The article you are looking for does not exist or has been moved.
-          </p>
-          <Link href="/blog">
-            <Button className="bg-primary hover:bg-primary/90">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Blog
-            </Button>
-          </Link>
-        </div>
-      </div>
-    )
+    notFound()
   }
 
   const otherPosts = Object.values(blogPosts).filter((p) => p.id !== post.id)
@@ -464,9 +438,7 @@ export default function BlogPostPage() {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div
-            className={`max-w-4xl mx-auto transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-          >
+          <div className="max-w-4xl mx-auto">
             <Link
               href="/blog"
               className="inline-flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors"

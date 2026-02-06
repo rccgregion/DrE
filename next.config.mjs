@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   typescript: {
     // Remove this in production - it hides type errors
     ignoreBuildErrors: false,
